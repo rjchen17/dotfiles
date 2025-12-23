@@ -18,6 +18,9 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+" Remaps
+imap jj <Esc>
+
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
   augroup redhat
