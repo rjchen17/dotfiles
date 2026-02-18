@@ -54,6 +54,10 @@ if has("cscope") && filereadable("/usr/bin/cscope")
    set csverb
 endif
 
+" ALE
+
+let g:ale_fixers = {'python': ['pylint']}
+
 " pylint
 augroup python_compiler
   autocmd!
