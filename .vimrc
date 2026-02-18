@@ -55,8 +55,19 @@ if has("cscope") && filereadable("/usr/bin/cscope")
 endif
 
 " ALE
-
+" pylint
 let g:ale_fixers = {'python': ['pylint']}
+" Automatically detect the Conda site-packages for the active environment
+let g:conda_path = $CONDA_PREFIX
+if !empty(g:conda_path)
+    " This finds the site-packages folder regardless of the 3.x version
+    let g:site_pkgs = glob(g:conda_path . '/lib/python3*/site-packages', 0, 1)
+    if !empty(g:site_pkgs)
+        let g:ale_python_pylint_options = '--init-hook="import sys; sys.path.append(''' . g:site_pkgs[0] . ''')"'
+    endif
+endif
+
+let g:ale_virtualtext_cursor = 'all'
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
