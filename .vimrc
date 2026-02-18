@@ -58,12 +58,6 @@ endif
 
 let g:ale_fixers = {'python': ['pylint']}
 
-" pylint
-augroup python_compiler
-  autocmd!
-  autocmd FileType python compiler pylint
-augroup END
-
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
