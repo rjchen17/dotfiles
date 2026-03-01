@@ -55,8 +55,11 @@ if has("cscope") && filereadable("/usr/bin/cscope")
 endif
 
 " ALE
-" pylint
-let g:ale_fixers = {'python': ['pylint']}
+let g:ale_fixers = {
+\ 'python': ['pylint'],
+\ 'fortran': ['fortitude']}
+
+" ALE - Python
 " Automatically detect the Conda site-packages for the active environment
 let g:conda_path = $CONDA_PREFIX
 if !empty(g:conda_path)
