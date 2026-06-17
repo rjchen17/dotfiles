@@ -82,6 +82,10 @@ if &t_Co > 2 || has("gui_running")
   set hlsearch
 endif
 
+set incsearch " incremental search
+set ignorecase
+set smartcase " capital letters = case sensitive
+
 filetype plugin on
 
 if &term=="xterm"
