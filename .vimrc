@@ -57,7 +57,8 @@ endif
 " ALE
 let g:ale_linters = {
 \ 'python': ['pylint'],
-\ 'fortran': ['fortitude']}
+\ 'fortran': ['fortitude'],
+\ 'c': ['gcc']}
 
 let g:ale_fixers = {
 \ 'python': ['black']}
@@ -72,6 +73,12 @@ if !empty(g:conda_path)
         let g:ale_python_pylint_options = '--init-hook="import sys; sys.path.append(''' . g:site_pkgs[0] . ''')"'
     endif
 endif
+
+"ALE - C
+" MPI
+
+" This is hardcoded and should be changed:
+let g:ale_c_cc_options = '-I /opt/homebrew/Cellar/mpich/5.0.0/include'
 
 let g:ale_virtualtext_cursor = 'all'
 
